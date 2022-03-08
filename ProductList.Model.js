@@ -268,6 +268,8 @@ define('ProductList.Model', [
                     xmlString += 'xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ';
                     xmlString += 'xmlns:html="http://www.w3.org/TR/REC-html40">';
                     xmlString += '<Worksheet ss:Name="Sheet1">';
+		    xmlString += '<Styles>' + '<Style ss:ID="s63">' + '<Font x:CharSet="204" ss:Size="12" ss:Color="#000000" ss:Bold="1" ss:Underline="Single"/>' + '</Style>' + '</Styles>';
+
 
                      console.warn("jhgfghbjnkl", product_list_results[0].name);
                      console.warn("jhgfghbjnkl", JSON.stringify(product_list_results[0].name));
@@ -276,7 +278,7 @@ define('ProductList.Model', [
                     var row = '';
                     for(var i=0;i<product_list_results.length;i++){
                       row = '<Row>' +
-                                 '<Cell><Data ss:Type="String">'+ product_list_results[i].name +'</Data></Cell>' +
+                                 '<Cell ss:StyleID="s63"><Data ss:Type="String">'+ product_list_results[i].name +'</Data></Cell>' +
                             '</Row>';
                       for(var j=0;j<product_list_results[i].items.length;j++){
                           row +=  '<Row>' +
